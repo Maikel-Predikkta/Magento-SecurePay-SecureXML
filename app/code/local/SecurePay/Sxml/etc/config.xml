@@ -22,28 +22,28 @@
 		</blocks>
 		<helpers>
 			<Sxml>
-				<class>SecurePay_sxml_Helper</class>
+				<class>SecurePay_Sxml_Helper</class>
 			</Sxml>
 		</helpers>
 		<resources>
-			<sxml_setup>
+			<Sxml_setup>
 				<setup>
-					<module>SecurePay_sxml</module>
+					<module>SecurePay_Sxml</module>
 				</setup>
 				<connection>
 					<use>local_setup</use>
 				</connection>
-			</sxml_setup>
-			<sxml_write>
+			</Sxml_setup>
+			<Sxml_write>
 				<connection>
 					<use>local_write</use>
 				</connection>
-			</sxml_write>
-			<sxml_read>
+			</Sxml_write>
+			<Sxml_read>
 				<connection>
 					<use>local_read</use>
 				</connection>
-			</sxml_read>
+			</Sxml_read>
 		</resources>
 		<payment>
 			<cc>

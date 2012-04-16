@@ -602,40 +602,7 @@ class securepay_xml_transaction
 			if(array_key_exists('banktxnID',$this->responseArray))
 				return $this->responseArray['banktxnID'];
 		return false;
-	}
-	
-	/*
-	//Disabled for the time being: not required yet
-	public function processDirectCredit($amount, $txnReference, $accName, $accBSB, $accNumber)
-	{
-		$this->reset();
-		
-		$this->setTxnType(SECUREPAY_TXN_DIRECTCREDIT);
-
-		$this->setAmount($amount);
-		$this->setTxnReference($txnReference);
-		$this->setAccName($accName);
-		$this->setAccNumber($accNumber);
-		$this->setAccBSB($accBSB);
-
-		return $this->processTransaction();
-	}
-	
-	public function processDirectDebit($amount, $txnReference, $accName, $accBSB, $accNumber)
-	{
-		$this->reset();
-		
-		$this->setTxnType(SECUREPAY_TXN_DIRECTDEBIT);
-
-		$this->setAmount($amount);
-		$this->setTxnReference($txnReference);
-		$this->setAccName($accName);
-		$this->setAccNumber($accNumber);
-		$this->setAccBSB($accBSB);
-		
-		return $this->processTransaction();
-	}
-	*/
+	}	
 	
 	/**
 	 * processTransaction:
@@ -1083,10 +1050,7 @@ class securepay_xml_transaction
 			"77" is Approved (ANZ only).
 			Any other 2 digit code is a decline or error from the bank. */
 			
-		if ((strcasecmp( $responseArray["approved"], "Yes" ) == 0) &&
-			(strcmp( $responseArray["responseCode"], "00" ) === 0 ||
-			 strcmp( $responseArray["responseCode"], "08" ) === 0 ||
-			 strcmp( $responseArray["responseCode"], "77" ) === 0 ) )
+		if (strcasecmp( $responseArray["approved"], "Yes" ) == 0)
 		{
 			return true;
 		}
@@ -1151,7 +1115,7 @@ class securepay_xml_transaction
 			}
 		}
 		return $output;
-	}	
+	}
 }
 
 ?>

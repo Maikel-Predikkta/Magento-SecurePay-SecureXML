@@ -155,6 +155,7 @@ class SecurePay_Sxml_Model_Sxml extends Mage_Payment_Model_Method_Cc
 		$status = $sxml->getResultByKeyName('responseCode');		
 		
 		$payment->setCcTransId(''.$preauthID);
+		$payment->setTransactionId(''.$preauthID);
 		
 		if($this->getDebug())
 		{
@@ -248,6 +249,7 @@ class SecurePay_Sxml_Model_Sxml extends Mage_Payment_Model_Method_Cc
 		if($bankTxnID)
 		{
 			$payment->setCcTransId(''.$bankTxnID);
+			$payment->setTransactionId(''.$bankTxnID);
 		}
 		
 		if($this->getDebug())
@@ -315,6 +317,7 @@ class SecurePay_Sxml_Model_Sxml extends Mage_Payment_Model_Method_Cc
 		if($bankTxnID)
 		{
 			$payment->setCcTransId(''.$bankTxnID);
+			$payment->setTransactionId(''.$bankTxnID);
 		}
 		
 		if($this->getDebug())
