@@ -4,7 +4,7 @@ class SecurePay_Sxml_Model_Source_Cctype extends Mage_Payment_Model_Source_Cctyp
 {
     public function getAllowedTypes()
     {  
-        return array('VI', 'DN', 'AE','OT','MC');
+        return array('VI', 'DICL', 'AE', 'JCB', 'MC');
     }
 }
 ?>
