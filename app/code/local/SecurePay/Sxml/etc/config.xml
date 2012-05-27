@@ -75,7 +75,7 @@
 				<test>1</test>
 				<antifraud>0</antifraud>
 				<usecvv>0</usecvv>
-				<cctypes>OT</cctypes>
+				<cctypes>AE,VI,MC</cctypes>
 				<payment_action>authorize</payment_action>
 			</Sxml>
 		</payment>
